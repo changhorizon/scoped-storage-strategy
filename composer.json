@@ -1,5 +1,5 @@
 {
-    "name": "hizpark/scoped-storage-strategy",
+    "name": "changhorizon/scoped-storage-strategy",
     "description": "A flexible and pluggable storage strategy for managing scoped, temporary key-value data using sessions, tokens, Redis, and more.",
     "keywords": [
         "storage",
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Hizpark\\ScopedStorageStrategy\\": "src/"
+            "ChangHorizon\\ScopedStorageStrategy\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Hizpark\\ScopedStorageStrategy\\Tests\\": "tests/"
+            "ChangHorizon\\ScopedStorageStrategy\\Tests\\": "tests/"
         }
     },
     "scripts": {

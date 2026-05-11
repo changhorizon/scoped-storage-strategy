@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Hizpark\ScopedStorageStrategy\Session;
+namespace ChangHorizon\ScopedStorageStrategy\Session;
 
-use Hizpark\ScopedStorageStrategy\ScopedStorageStrategyInterface;
-use Hizpark\ScopedStorageStrategy\SessionInitializerInterface;
+use ChangHorizon\ScopedStorageStrategy\ScopedStorageStrategyInterface;
+use ChangHorizon\ScopedStorageStrategy\SessionInitializerInterface;
 
 class SessionStorageStrategy implements ScopedStorageStrategyInterface
 {

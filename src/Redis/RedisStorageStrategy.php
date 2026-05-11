@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Hizpark\ScopedStorageStrategy\Redis;
+namespace ChangHorizon\ScopedStorageStrategy\Redis;
 
-use Hizpark\ScopedStorageStrategy\ScopedStorageStrategyInterface;
+use ChangHorizon\ScopedStorageStrategy\ScopedStorageStrategyInterface;
 use Redis;
 
 class RedisStorageStrategy implements ScopedStorageStrategyInterface

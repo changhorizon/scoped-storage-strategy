@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Hizpark\ScopedStorageStrategy\Tests;
+namespace ChangHorizon\ScopedStorageStrategy\Tests;
 
-use Hizpark\ScopedStorageStrategy\Session\SessionInitializerWithCookie;
-use Hizpark\ScopedStorageStrategy\Session\SessionStorageStrategy;
+use ChangHorizon\ScopedStorageStrategy\Session\SessionInitializerWithCookie;
+use ChangHorizon\ScopedStorageStrategy\Session\SessionStorageStrategy;
 use PHPUnit\Framework\TestCase;
 
 class SessionStorageStrategyTest extends TestCase

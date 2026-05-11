@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Hizpark\ScopedStorageStrategy\Tests;
+namespace ChangHorizon\ScopedStorageStrategy\Tests;
 
-use Hizpark\ScopedStorageStrategy\Redis\RedisStorageStrategy;
+use ChangHorizon\ScopedStorageStrategy\Redis\RedisStorageStrategy;
 use PHPUnit\Framework\TestCase;
 use Redis;
 

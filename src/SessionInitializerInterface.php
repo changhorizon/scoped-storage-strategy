@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hizpark\ScopedStorageStrategy;
+namespace ChangHorizon\ScopedStorageStrategy;
 
 interface SessionInitializerInterface
 {

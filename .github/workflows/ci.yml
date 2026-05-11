@@ -100,4 +100,4 @@ jobs:
           tag_name: ${{ github.ref_name }}
           body: |
             🎉 Release ${{ github.ref_name }}
-            [📖 README Documentation](https://github.com/hizpark/scoped-storage-strategy#readme)
+            [📖 README Documentation](https://github.com/changhorizon/scoped-storage-strategy#readme)

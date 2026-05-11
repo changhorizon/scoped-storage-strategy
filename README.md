@@ -1,6 +1,6 @@
 # Scoped Storage Strategy
 
-![License](https://img.shields.io/github/license/hizpark/scoped-storage-strategy)
+![License](https://img.shields.io/github/license/changhorizon/scoped-storage-strategy)
 
 A pluggable and namespace-aware storage abstraction for temporarily persisting key-value data during scoped user interactions.
 This strategy supports session-based (cookie and token) and Redis-based implementations, and is designed to decouple application logic from underlying storage mechanisms.
@@ -18,7 +18,7 @@ Ideal for tracking transient states — such as validation progress, multistep w
 ## Installation
 
 ```bash
-composer require hizpark/scoped-storage-strategy
+composer require changhorizon/scoped-storage-strategy
 ```
 
 ## Directory Structure

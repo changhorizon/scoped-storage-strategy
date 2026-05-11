@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Hizpark\ScopedStorageStrategy\Session;
+namespace ChangHorizon\ScopedStorageStrategy\Session;
 
-use Hizpark\ScopedStorageStrategy\SessionInitializerInterface;
+use ChangHorizon\ScopedStorageStrategy\SessionInitializerInterface;
 
 class SessionInitializerWithToken implements SessionInitializerInterface
 {
