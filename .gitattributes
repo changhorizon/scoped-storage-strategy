@@ -1,0 +1,45 @@
+* text=auto
+
+# Source code
+*.php text diff=php
+
+# Config
+*.json text
+*.xml text
+*.neon text
+*.yml text
+*.yaml text
+*.dist text
+
+# Documentation
+*.md text
+LICENSE text
+
+# Editor
+.editorconfig text
+
+# Git
+.gitattributes text
+.gitignore text
+
+# Archives
+*.phar binary
+
+# Vendors
+/vendor/ export-ignore
+
+# Tests
+/tests/ export-ignore
+
+# CI
+/.github/ export-ignore
+
+# IDE
+/.editorconfig export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+
+# Config
+/.php-cs-fixer.dist.php export-ignore
+/phpstan.neon.dist export-ignore
+/phpunit.xml.dist export-ignore
