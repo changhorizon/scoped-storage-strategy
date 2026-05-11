@@ -1,27 +1,32 @@
 # Scoped Storage Strategy
 
-![License](https://img.shields.io/github/license/changhorizon/scoped-storage-strategy)
+> A pluggable and namespace-aware storage abstraction for temporarily persisting key-value data during scoped user interactions.
 
-A pluggable and namespace-aware storage abstraction for temporarily persisting key-value data during scoped user interactions.
-This strategy supports session-based (cookie and token) and Redis-based implementations, and is designed to decouple application logic from underlying storage mechanisms.
+![License](https://img.shields.io/github/license/changhorizon/scoped-storage-strategy?style=flat-square)
+![Latest Version](https://img.shields.io/packagist/v/changhorizon/scoped-storage-strategy?style=flat-square)
+![PHP Version](https://img.shields.io/badge/php-8.2--8.4-blue?style=flat-square)
+![Static Analysis](https://img.shields.io/badge/static_analysis-PHPStan-blue?style=flat-square)
+![Tests](https://img.shields.io/badge/tests-PHPUnit-brightgreen?style=flat-square)
+[![codecov](https://codecov.io/gh/changhorizon/scoped-storage-strategy/branch/main/graph/badge.svg)](https://codecov.io/gh/changhorizon/scoped-storage-strategy)
+![CI](https://github.com/changhorizon/scoped-storage-strategy/actions/workflows/ci.yml/badge.svg?style=flat-square)
 
-Ideal for tracking transient states — such as validation progress, multistep workflows, or temporary metadata — using a consistent and replaceable strategy.
+Supports session-based (cookie and token) and Redis-based implementations, designed to decouple application logic from underlying storage mechanisms. Ideal for tracking transient states — such as validation progress, multistep workflows, or temporary metadata.
 
-## Features
+## ✨ 特性
 
-- 🍪 **Cookie-based PHP session**
-- 🆔 **Token-based PHP session** (stateless API support)
-- 🚀 **Redis storage** for shared, scalable scenarios
+- 🍪 **Cookie-based PHP session** — traditional web applications
+- 🆔 **Token-based PHP session** — stateless API support
+- 🚀 **Redis storage** — shared, scalable scenarios
 - 🔌 PSR-style interface for easy integration and extension
-- ✅ Unified interface with `put`, `get`, `exists`, `remove`, `clear`, etc.
+- ✅ Unified interface with `put`, `get`, `exists`, `remove`, `clear`
 
-## Installation
+## 📦 安装
 
 ```bash
 composer require changhorizon/scoped-storage-strategy
 ```
 
-## Directory Structure
+## 📂 目录结构
 
 ```txt
 src/
@@ -35,13 +40,13 @@ src/
     └── RedisStorageStrategy.php
 ```
 
-## Usage
+## 🚀 用法示例
 
-### 1. SessionStorageStrategy with Cookie
+### SessionStorageStrategy with Cookie
 
 ```php
-use Hizpark\ScopedStorageStrategy\SessionStorageStrategy;
-use Hizpark\ScopedStorageStrategy\SessionInitializerWithCookie;
+use ChangHorizon\ScopedStorageStrategy\SessionStorageStrategy;
+use ChangHorizon\ScopedStorageStrategy\SessionInitializerWithCookie;
 
 $initializer = new SessionInitializerWithCookie();
 $strategy = new SessionStorageStrategy('scope-123', $initializer);
@@ -50,13 +55,13 @@ $strategy->put('demo-file-123', '/path/to/demo-file-123');
 $value = $strategy->get('demo-file-123');
 ```
 
-### 2. SessionStorageStrategy with Token (for stateless APIs)
+### SessionStorageStrategy with Token
 
 ```php
-use Hizpark\ScopedStorageStrategy\SessionStorageStrategy;
-use Hizpark\ScopedStorageStrategy\SessionInitializerWithToken;
+use ChangHorizon\ScopedStorageStrategy\SessionStorageStrategy;
+use ChangHorizon\ScopedStorageStrategy\SessionInitializerWithToken;
 
-$token = $_GET['token'] ?? ''; // or from Authorization header
+$token = $_GET['token'] ?? '';
 $initializer = new SessionInitializerWithToken($token);
 $strategy = new SessionStorageStrategy('scope-456', $initializer);
 
@@ -64,10 +69,10 @@ $strategy->put('demo-file-456', '/path/to/demo-file-456');
 $value = $strategy->get('demo-file-456');
 ```
 
-### 3. RedisStorageStrategy
+### RedisStorageStrategy
 
 ```php
-use Hizpark\ScopedStorageStrategy\RedisStorageStrategy;
+use ChangHorizon\ScopedStorageStrategy\RedisStorageStrategy;
 
 $redis = new \Redis();
 $redis->connect('127.0.0.1', 6379);
@@ -78,12 +83,12 @@ $strategy->put('demo-file-789', '/path/to/demo-file-789');
 $value = $strategy->get('demo-file-789');
 ```
 
-## Interface
+## 📐 接口说明
 
-All strategies implement the following interface:
+All strategies implement:
 
 ```php
-namespace Hizpark\ScopedStorageStrategy;
+namespace ChangHorizon\ScopedStorageStrategy;
 
 interface ScopedStorageStrategyInterface
 {
@@ -97,10 +102,10 @@ interface ScopedStorageStrategyInterface
 }
 ```
 
-And session-based strategies require a session initializer:
+Session-based strategies require a session initializer:
 
 ```php
-namespace Hizpark\ScopedStorageStrategy;
+namespace ChangHorizon\ScopedStorageStrategy;
 
 interface SessionInitializerInterface
 {
@@ -108,7 +113,34 @@ interface SessionInitializerInterface
 }
 ```
 
----
+## 🔍 静态分析
+
+```bash
+composer stan
+```
+
+## 🎯 代码风格
+
+```bash
+composer cs:chk    # check
+composer cs:fix    # auto-fix
+```
+
+## ✅ 单元测试
+
+```bash
+composer test
+composer test:coverage
+```
+
+## 🤝 贡献指南
+
+欢迎 Issue 与 PR，建议遵循以下流程：
+
+1. Fork 仓库
+2. 创建新分支进行开发
+3. 提交 PR 前请确保测试通过、风格一致
+4. 提交详细描述
 
 ## 📜 License
 
